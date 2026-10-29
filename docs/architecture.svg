@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 400" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#5b636c"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#d5d9d2;stroke-width:1.5}
+      .core{fill:#fdf8ea;stroke:#c8961c;stroke-width:1.5}
+      .t{font-size:15px;font-weight:650;fill:#15181c}
+      .s{font-size:12.5px;fill:#5b636c}
+      .k{font-size:11px;font-weight:700;letter-spacing:1.2px;fill:#a67a0e}
+      .l{stroke:#5b636c;stroke-width:1.6;fill:none;marker-end:url(#a)}
+      .both{stroke:#5b636c;stroke-width:1.6;fill:none;marker-end:url(#a);marker-start:url(#a)}
+      .lab{font-size:11.5px;fill:#5b636c}
+    </style>
+  </defs>
+  <rect width="1040" height="400" rx="18" fill="#f8f7f2"/>
+
+  <text x="32" y="46" class="k">AT THE INVERTER</text>
+  <rect class="box" x="32" y="64" width="176" height="104" rx="10"/>
+  <text x="48" y="92" class="t">Felicity inverter</text>
+  <text x="48" y="112" class="s">Modbus RTU slave</text>
+  <text x="48" y="131" class="s">RS-485 A / B</text>
+  <text x="48" y="150" class="s">9600 8N1</text>
+
+  <rect class="box" x="252" y="80" width="120" height="72" rx="10"/>
+  <text x="268" y="108" class="t">MAX485</text>
+  <text x="268" y="128" class="s">half-duplex</text>
+  <path class="both" d="M210 116 H250"/>
+  <text x="214" y="104" class="lab">A/B</text>
+
+  <rect class="core" x="416" y="58" width="282" height="296" rx="14"/>
+  <text x="432" y="86" class="k">ESP32 · MICROPYTHON</text>
+  <rect class="box" x="432" y="100" width="250" height="48" rx="9"/>
+  <text x="446" y="122" class="t">Modbus RTU master</text>
+  <text x="446" y="139" class="s">CRC-16 · retries · merged register reads</text>
+  <rect class="box" x="432" y="160" width="250" height="44" rx="9"/>
+  <text x="446" y="182" class="t">Decode</text>
+  <text x="446" y="197" class="s">scale · sign · battery state</text>
+  <rect class="box" x="432" y="216" width="120" height="58" rx="9"/>
+  <text x="444" y="240" class="t">Flash buffer</text>
+  <text x="444" y="259" class="s">500 readings</text>
+  <rect class="box" x="562" y="216" width="120" height="58" rx="9"/>
+  <text x="574" y="240" class="t">Watchdog</text>
+  <text x="574" y="259" class="s">30 s · reconnect</text>
+  <rect class="box" x="432" y="286" width="120" height="52" rx="9"/>
+  <text x="444" y="309" class="t">Setup portal</text>
+  <text x="444" y="326" class="s">AP + web form</text>
+  <rect class="box" x="562" y="286" width="120" height="52" rx="9"/>
+  <text x="574" y="309" class="t">Status</text>
+  <text x="574" y="326" class="s">LED + OLED</text>
+  <path class="both" d="M374 116 H430"/>
+  <text x="380" y="104" class="lab">UART2</text>
+
+  <text x="754" y="46" class="k">7TH BREED</text>
+  <rect class="box" x="754" y="64" width="254" height="150" rx="10"/>
+  <text x="770" y="92" class="t">Backend</text>
+  <text x="770" y="114" class="s">POST /gateway/felicity/telemetry</text>
+  <text x="770" y="134" class="s">token checked by SHA-256 hash</text>
+  <text x="770" y="154" class="s">serial must match the system</text>
+  <text x="770" y="174" class="s">normalised for the app:</text>
+  <text x="770" y="193" class="s">solar, battery, load, grid</text>
+  <path class="l" d="M698 140 H752"/>
+  <text x="704" y="130" class="lab">HTTPS</text>
+  <text x="708" y="158" class="lab">10 s</text>
+
+  <rect class="box" x="754" y="250" width="254" height="72" rx="10"/>
+  <text x="770" y="278" class="t">Customer app</text>
+  <text x="770" y="298" class="s">live system, offline after 2 min</text>
+  <path class="l" d="M880 214 V248"/>
+
+  <text x="32" y="380" class="s">Felicity has no cloud API to poll, so the data comes from a gateway wired to the inverter's RS-485 port.</text>
+</svg>

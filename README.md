@@ -6,15 +6,7 @@ I built it at 7th Breed to prove the backend's local-gateway path end to end: in
 
 Written in MicroPython.
 
-```
- Felicity inverter            ESP32 gateway                         7th Breed backend
- ┌──────────────┐  RS-485   ┌──────────────────────┐   HTTPS     ┌──────────────────────────┐
- │ Modbus slave │◄─────────►│ Modbus RTU master    │────────────►│ token check (SHA-256)    │
- │  (A/B pair)  │  MAX485   │ register decode      │  every 10 s │ serial must match system │
- └──────────────┘           │ offline buffer       │             │ normalise → live screen  │
-                            │ watchdog, LED / OLED │             └──────────────────────────┘
-                            └──────────────────────┘
-```
+![Architecture](docs/architecture.svg)
 
 ## What it does
 
@@ -37,6 +29,8 @@ Written in MicroPython.
 | 12/24/48 V → 5 V buck converter | To power the gateway from the battery bank, or use USB |
 
 ### Wiring
+
+![Wiring](docs/wiring.svg)
 
 | ESP32 | MAX485 | Inverter RS-485 port |
 |---|---|---|

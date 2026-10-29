@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 470" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <defs>
+    <style>
+      .board{fill:#fff;stroke:#c9cdc5;stroke-width:1.5}
+      .t{font-size:16px;font-weight:700;fill:#15181c}
+      .s{font-size:12px;fill:#5b636c}
+      .pin{font-size:12.5px;font-family:ui-monospace,Consolas,monospace;fill:#15181c}
+      .dot{fill:#15181c}
+      .w{stroke-width:2.4;fill:none;stroke-linecap:round}
+      .k{font-size:11px;font-weight:700;letter-spacing:1.2px;fill:#a67a0e}
+    </style>
+  </defs>
+  <rect width="1040" height="470" rx="18" fill="#f8f7f2"/>
+  <text x="32" y="44" class="k">WIRING</text>
+
+  <rect class="board" x="40" y="66" width="230" height="330" rx="12"/>
+  <text x="58" y="96" class="t">ESP32 DevKit</text>
+  <g class="pin">
+    <text x="58" y="138">GPIO17 · TX2</text><circle class="dot" cx="262" cy="134" r="4"/>
+    <text x="58" y="178">GPIO16 · RX2</text><circle class="dot" cx="262" cy="174" r="4"/>
+    <text x="58" y="218">GPIO4</text><circle class="dot" cx="262" cy="214" r="4"/>
+    <text x="58" y="258">3V3</text><circle class="dot" cx="262" cy="254" r="4"/>
+    <text x="58" y="298">GND</text><circle class="dot" cx="262" cy="294" r="4"/>
+    <text x="58" y="338">GPIO21 · SDA</text><circle class="dot" cx="262" cy="334" r="4"/>
+    <text x="58" y="378">GPIO22 · SCL</text><circle class="dot" cx="262" cy="374" r="4"/>
+  </g>
+
+  <rect class="board" x="420" y="96" width="190" height="224" rx="12"/>
+  <text x="438" y="116" class="t" dy="0">MAX485</text>
+  <g class="pin">
+    <circle class="dot" cx="428" cy="134" r="4"/><text x="442" y="138">DI</text>
+    <circle class="dot" cx="428" cy="174" r="4"/><text x="442" y="178">RO</text>
+    <circle class="dot" cx="428" cy="214" r="4"/><text x="442" y="218">DE + RE</text>
+    <circle class="dot" cx="428" cy="254" r="4"/><text x="442" y="258">VCC</text>
+    <circle class="dot" cx="428" cy="294" r="4"/><text x="442" y="298">GND</text>
+    <text x="578" y="178">A</text><circle class="dot" cx="602" cy="174" r="4"/>
+    <text x="578" y="238">B</text><circle class="dot" cx="602" cy="234" r="4"/>
+  </g>
+
+  <path class="w" stroke="#d9480f" d="M262 134 H428"/>
+  <path class="w" stroke="#1971c2" d="M262 174 H428"/>
+  <path class="w" stroke="#7048e8" d="M262 214 H428"/>
+  <path class="w" stroke="#e03131" d="M262 254 H428"/>
+  <path class="w" stroke="#343a40" d="M262 294 H428"/>
+
+  <rect class="board" x="800" y="110" width="200" height="180" rx="12"/>
+  <text x="818" y="140" class="t">Inverter RS-485</text>
+  <text x="818" y="160" class="s">BMS / RS-485 port</text>
+  <g class="pin">
+    <circle class="dot" cx="808" cy="174" r="4"/><text x="822" y="178">A · D+</text>
+    <circle class="dot" cx="808" cy="234" r="4"/><text x="822" y="238">B · D−</text>
+  </g>
+  <path class="w" stroke="#2f9e44" d="M602 174 C680 174 720 174 808 174"/>
+  <path class="w" stroke="#f08c00" d="M602 234 C680 234 720 234 808 234"/>
+  <path d="M660 174 C672 190 648 206 660 222 C672 238 648 234 660 234" fill="none" stroke="#9aa1a8" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="622" y="268" class="s">twisted pair</text><text x="622" y="286" class="s">120 Ω across A/B</text><text x="622" y="304" class="s">on long runs</text>
+
+  <rect class="board" x="420" y="348" width="190" height="72" rx="12"/>
+  <text x="438" y="376" class="t">SSD1306 OLED</text>
+  <text x="438" y="396" class="s">optional · I2C 0x3C</text>
+  <path class="w" stroke="#0c8599" d="M262 334 C340 334 340 372 420 372"/>
+  <path class="w" stroke="#66a80f" d="M262 374 C330 374 340 398 420 398"/>
+
+  <text x="40" y="446" class="s">DE and RE are tied together and driven by GPIO4: high to transmit, low to listen. A 3.3 V transceiver (MAX3485) is the cleaner choice.</text>
+</svg>
